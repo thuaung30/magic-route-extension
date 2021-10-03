@@ -8,6 +8,7 @@ import {
   InputRightAddon,
 } from "@chakra-ui/react";
 import React from "react";
+import PropTypes from "prop-types";
 
 const Search = ({
   search,
@@ -18,7 +19,7 @@ const Search = ({
   searchProducts,
 }) => {
   return (
-    <Box w="390px">
+    <Box w="100%">
       {" "}
       <InputGroup>
         <Input
@@ -57,6 +58,15 @@ const Search = ({
       </InputGroup>
     </Box>
   );
+};
+
+Search.propTypes = {
+  search: PropTypes.string,
+  setSearch: PropTypes.func.isRequired,
+  setSearchRes: PropTypes.func.isRequired,
+  isSearching: PropTypes.bool,
+  toggleIsSearching: PropTypes.func.isRequired,
+  searchProducts: PropTypes.func.isRequired,
 };
 
 export default Search;

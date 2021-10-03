@@ -11,13 +11,13 @@ import { theme } from "./theme";
 const queryClient = new QueryClient();
 
 ReactDOM.render(
-  <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <ChakraProvider theme={theme}>
-        <App />
-      </ChakraProvider>
-    </QueryClientProvider>
-  </React.StrictMode>,
+  // <React.StrictMode>
+  <QueryClientProvider client={queryClient}>
+    <ChakraProvider theme={theme}>
+      <App />
+    </ChakraProvider>
+  </QueryClientProvider>,
+  // </React.StrictMode>,
   document.getElementById("root")
 );
 

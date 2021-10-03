@@ -2,7 +2,7 @@ import { Flex, Heading, Box } from "@chakra-ui/react";
 import { Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
-const Navbar = ({}) => {
+const Navbar = () => {
   return (
     <Flex
       w="100%"
@@ -24,7 +24,7 @@ const Navbar = ({}) => {
           </Link>
         </Box>
         <Box display="inline" px="2">
-          <Link to="/history">
+          <Link to="/order">
             <Icon link={true} name="history" />
           </Link>
         </Box>

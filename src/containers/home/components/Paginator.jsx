@@ -1,5 +1,6 @@
 import { Flex } from "@chakra-ui/react";
 import { Pagination } from "semantic-ui-react";
+import PropTypes from "prop-types";
 
 const Paginator = ({ offset, totalPages, setOffset }) => {
   return (
@@ -15,6 +16,12 @@ const Paginator = ({ offset, totalPages, setOffset }) => {
       />
     </Flex>
   );
+};
+
+Paginator.propTypes = {
+  offset: PropTypes.number.isRequired,
+  totalPages: PropTypes.number.isRequired,
+  setOffset: PropTypes.func.isRequired,
 };
 
 export default Paginator;
