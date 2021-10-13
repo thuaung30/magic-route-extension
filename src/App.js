@@ -12,6 +12,7 @@ import { reducer, initialState, StateContext } from "./background";
 import Delivery from "./containers/delivery/delivery";
 import Order from "./containers/order/order";
 import SubOrder from "./containers/order/sub_order";
+import Send from "./containers/send/send";
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -28,6 +29,9 @@ function App() {
             <Switch>
               <Route path="/user">
                 <User />
+              </Route>
+              <Route path="/send">
+                <Send />
               </Route>
               <Route path="/restore">
                 <Restore />

@@ -1,14 +1,10 @@
-import {
-  Flex,
-  GridItem,
-  Text,
-  Grid,
-  Button,
-  Container,
-} from "@chakra-ui/react";
+import { Flex, GridItem, Text, Grid, Container } from "@chakra-ui/react";
+import { useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
+import MyButton from "../../../components/MyButton";
 
 const BalanceCard = ({ balance, asset_code }) => {
+  const history = useHistory();
   return (
     <Flex p={5} w="100%" shadow="sm" borderWidth="1px" alignItems="center">
       <Grid templaterows="repeat(2, 1fr)" gap={4} width="100%">
@@ -22,18 +18,16 @@ const BalanceCard = ({ balance, asset_code }) => {
         </GridItem>
         <GridItem>
           <GridItem textAlign="center">
-            <Button
-              size="lg"
-
-              //   onClick={() =>
-              //     router.push({
-              //       pathname: "/send",
-              //       query: { assetType: asset_code },
-              //     })
-              //   }
+            <MyButton
+              handleClick={() =>
+                history.push({
+                  pathname: "/send",
+                  state: { assetType: asset_code },
+                })
+              }
             >
               Send
-            </Button>
+            </MyButton>
           </GridItem>
         </GridItem>
       </Grid>
